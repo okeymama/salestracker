@@ -51,7 +51,7 @@ public class SalesInteraction implements Serializable {
 	private Duration duration;
 	
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "salesInteraction", orphanRemoval = true)
-	private Set<Case> cases;
+	private Set<SalesCase> salesCases;
 	
 	@Column(name = "created_by")
 	private String createdBy;

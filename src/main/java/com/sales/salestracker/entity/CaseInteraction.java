@@ -45,10 +45,10 @@ public class CaseInteraction implements Serializable {
 	@Column(name = "description")
 	private String description;
 	
-	@ManyToOne(fetch = FetchType.EAGER, targetEntity = Case.class)
+	@ManyToOne(fetch = FetchType.EAGER, targetEntity = SalesCase.class)
     @JoinColumn(name = "case_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-	private Case parentCase;
+	private SalesCase parentCase;
 	
 	@Column(name = "created_by")
 	private String createdBy;

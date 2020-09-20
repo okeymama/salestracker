@@ -3,6 +3,7 @@
  */
 package com.sales.salestracker.service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -36,17 +37,17 @@ public class CaseInteractionService {
 	}
 	
 	public List<CaseInteractionDto> getCaseInteractionByCaseID(Long caseID) throws InstantiationException, IllegalAccessException{
-		 List<CaseInteraction> CaseInteractions =  caseInteractionRepo.findByCaseID(caseID);
+		 List<CaseInteraction> CaseInteractions =  new ArrayList<>();//caseInteractionRepo.findByCaseID(caseID);
 		 return SalestrackerBeanUtil.copyEntityListToDTOList(CaseInteractions, CaseInteractionDto.class);
 	}
 	
 	public List<CaseInteractionDto> getCaseInteractionByDate(Date date) throws InstantiationException, IllegalAccessException{
-		 List<CaseInteraction> CaseInteractions =  caseInteractionRepo.findByDate(date);
+		 List<CaseInteraction> CaseInteractions =  caseInteractionRepo.findByCreatedDate(date);
 		 return SalestrackerBeanUtil.copyEntityListToDTOList(CaseInteractions, CaseInteractionDto.class);
 	}
 	
-	public List<CaseInteractionDto> getCaseInteractionByCustomerID(Long customerID) throws InstantiationException, IllegalAccessException{
-		 List<CaseInteraction> CaseInteractions =  caseInteractionRepo.findByCustomerID(customerID);
+	public List<CaseInteractionDto> getCaseInteractionByCustomerID(String customerID) throws InstantiationException, IllegalAccessException{
+		 List<CaseInteraction> CaseInteractions =  new ArrayList<>();//caseInteractionRepo.findByCustomerID(customerID);
 		 return SalestrackerBeanUtil.copyEntityListToDTOList(CaseInteractions, CaseInteractionDto.class);
 	}
 }

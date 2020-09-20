@@ -3,7 +3,9 @@ package com.sales.salestracker.dto;
 import java.time.Duration;
 import java.util.Date;
 
-import com.sales.salestracker.entity.Case;
+import javax.persistence.criteria.CriteriaBuilder.Case;
+
+import com.sales.salestracker.entity.SalesCase;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,7 +24,7 @@ public class CaseInteractionDto {
 	
 	private String description;
 	
-	private Case parentCase;
+	private SalesCase parentCase;
 	
 	private String createdBy;
 	

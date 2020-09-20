@@ -30,10 +30,10 @@ import lombok.NoArgsConstructor;
  *
  */
 @Data
-@Entity(name="case")
+@Entity(name="sales_case")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Case implements Serializable {
+public class SalesCase implements Serializable {
 	/**
 	 * 
 	 */

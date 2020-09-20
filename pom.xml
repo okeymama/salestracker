@@ -8,11 +8,11 @@
 		<version>2.3.3.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.filestore</groupId>
-	<artifactId>filestore</artifactId>
+	<groupId>com.sales</groupId>
+	<artifactId>salestracker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>filestore</name>
-	<description>Demo project for Spring Boot</description>
+	<name>salestracker</name>
+	<description>Salestracker API on Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>

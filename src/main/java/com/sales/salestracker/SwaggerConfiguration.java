@@ -27,7 +27,7 @@ public class SwaggerConfiguration extends WebMvcConfigurationSupport {
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).groupName("business").apiInfo(apiInfo()).select()
-				.apis(RequestHandlerSelectors.basePackage("com.filestore.store.controller"))
+				.apis(RequestHandlerSelectors.basePackage("com.sales.salestracker.controller"))
 				.paths(PathSelectors.ant("/**")).build().useDefaultResponseMessages(false)
 				.globalResponseMessage(RequestMethod.GET, getGlobalDefaults())
 				.globalResponseMessage(RequestMethod.PUT, getGlobalDefaults())
@@ -39,8 +39,8 @@ public class SwaggerConfiguration extends WebMvcConfigurationSupport {
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("FileStore API")
-				.description("FileStore API")
+		return new ApiInfoBuilder().title("Sales Tracker API")
+				.description("Sales Tracker API")
 				.contact(new Contact("Okey Mama", "", "chandanchaubey@hotmail.com")).license("License")
 				.licenseUrl("License Url").version("0.1").build();
 	}
