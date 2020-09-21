@@ -4,6 +4,10 @@
 package com.sales.salestracker.dto;
 
 import java.util.Date;
+import java.util.List;
+
+import com.sales.salestracker.entity.CaseInteraction;
+import com.sales.salestracker.entity.SalesInteraction;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,19 +22,21 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class SalesCaseDto {
 
-	private Long caseID;
-	
-	private Long customerID;
+private Long salesCaseID;
 	
 	private Date creationDate;
+	
+	private Date lastUpdatedDate;
 	
 	private String status;
 	
 	private String recommendedProduct;
 	
-	private String problemDesc;
+	private String caseDesc;
+		
+	private List<CaseInteractionDto> caseInteractionDtos;
 	
-	private Long parentInteractionID;
+	private String lastUpdatedBy;
 	
 	private String asssignedTo;
 	

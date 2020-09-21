@@ -5,6 +5,7 @@ package com.sales.salestracker.dto;
 
 import java.time.Duration;
 import java.util.Date;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,7 +20,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class SalesInteractionDto {
 
-	private Long interactionID;
+	private Long salesIntID;
 	
 	private String customerID;
 	
@@ -27,10 +28,7 @@ public class SalesInteractionDto {
 	
 	private Duration duration;
 	
-	private String description;
-	
-	private Long associatedCaseID;
+	private List<SalesCaseDto> salesCaseDtos;
 	
 	private String createdBy;
-	
 }

@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.sales.salestracker.dto.CustomerDto;
 import com.sales.salestracker.entity.Customer;
@@ -17,6 +18,7 @@ import com.sales.salestracker.util.SalestrackerBeanUtil;
  * @author cchaubey
  *
  */
+@Transactional
 @Service
 public class CustomerService {
 

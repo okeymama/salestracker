@@ -12,7 +12,7 @@ spring:
     database: postgresql
     properties:
       hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
-      hibernate.default_schema: filestore
+      hibernate.default_schema: salestracker
 server :
      port : 8090
      

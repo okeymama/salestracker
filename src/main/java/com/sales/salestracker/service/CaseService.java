@@ -6,6 +6,7 @@ package com.sales.salestracker.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.sales.salestracker.dto.SalesCaseDto;
 import com.sales.salestracker.entity.SalesCase;
@@ -16,6 +17,7 @@ import com.sales.salestracker.util.SalestrackerBeanUtil;
  * @author cchaubey
  *
  */
+@Transactional
 @Service
 public class CaseService {
 

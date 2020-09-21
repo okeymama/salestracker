@@ -16,9 +16,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
@@ -26,9 +28,11 @@ import lombok.NoArgsConstructor;
  *
  */
 @Data
-@Entity(name="sales_interaction")
+@Table(name="sales_interaction")
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(of = {"salesIntID"})
 public class SalesInteraction implements Serializable {
 
 	/**
@@ -37,7 +41,7 @@ public class SalesInteraction implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "sales_int_id")
 	private Long salesIntID;
 	

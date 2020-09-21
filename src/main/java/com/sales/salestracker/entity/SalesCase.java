@@ -5,7 +5,7 @@ package com.sales.salestracker.entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -17,12 +17,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
@@ -30,9 +32,11 @@ import lombok.NoArgsConstructor;
  *
  */
 @Data
-@Entity(name="sales_case")
+@Entity
+@Table(name="sales_case")
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(of = {"salesCaseID"})
 public class SalesCase implements Serializable {
 	/**
 	 * 
@@ -40,9 +44,9 @@ public class SalesCase implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "case_id")
-	private Long caseID;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "sales_case_id")
+	private Long salesCaseID;
 	
 	@Column(name = "creation_date")
 	private Date creationDate;
@@ -64,11 +68,11 @@ public class SalesCase implements Serializable {
     @OnDelete(action = OnDeleteAction.CASCADE)
 	private SalesInteraction salesInteraction;
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "parentCase", orphanRemoval = true)
-	private List<CaseInteraction> caseInteractions;
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "salesCase", orphanRemoval = true)
+	private Set<CaseInteraction> caseInteractions;
 	
 	@Column(name = "last_updated_by")
-	private Long lastUpdatedBy;
+	private String lastUpdatedBy;
 	
 	@Column(name = "asssigned_to")
 	private String asssignedTo;
