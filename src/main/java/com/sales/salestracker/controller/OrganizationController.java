@@ -25,12 +25,12 @@ public class OrganizationController {
 	private OrganizationService organizationService;
 	
 	
-	@GetMapping("/Organization")
+	@GetMapping("/Organizations")
 	public List<OrganizationDto> getAllOrganization() throws InstantiationException, IllegalAccessException{
 		return organizationService.getAllOrganization();
 	}
 	
-	@PostMapping("/Organization")
+	@PostMapping("/Organizations")
 	public void saveOrganizations(@RequestBody List<OrganizationDto> organizationDtos) throws InstantiationException, IllegalAccessException {
 		organizationService.saveOrganizations(organizationDtos);
 	}

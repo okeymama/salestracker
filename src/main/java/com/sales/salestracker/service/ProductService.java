@@ -30,7 +30,6 @@ public class ProductService {
 	@Autowired
 	private ProductRepo productRepo;
 	
-	@GetMapping("/Products")
 	public List<ProductDto> getAllProduct() throws InstantiationException, IllegalAccessException{
 		List<ProductDto> productDtos  = null;
 		List<Product> products  = productRepo.findAll();
@@ -40,8 +39,7 @@ public class ProductService {
 		return productDtos;
 	}
 	
-	@PostMapping("/Products")
-	public void saveProduct(@RequestBody List<ProductDto> productDtos) throws InstantiationException, IllegalAccessException {
+	public void saveProduct(List<ProductDto> productDtos) throws InstantiationException, IllegalAccessException {
 		List<Product> products = SalestrackerBeanUtil.copyEntityListToDTOList(productDtos, Product.class);
 		productRepo.saveAll(products);
 	}
