@@ -25,17 +25,22 @@ public class CustomerService {
 	@Autowired
 	private CustomerRepo customerRepo;
 	
-	List<CustomerDto> getCustomers() throws InstantiationException, IllegalAccessException{
+	public List<CustomerDto> getCustomers() throws InstantiationException, IllegalAccessException{
 		List<Customer> customers = customerRepo.findAll();
 		return SalestrackerBeanUtil.copyEntityListToDTOList(customers, CustomerDto.class);
 	}
 	
-	void saveCustomers(List<CustomerDto> customerDtos) throws InstantiationException, IllegalAccessException {
+	public void saveCustomers(List<CustomerDto> customerDtos) throws InstantiationException, IllegalAccessException {
 		List<Customer> customers = SalestrackerBeanUtil.copyEntityListToDTOList(customerDtos, Customer.class);
 		customerRepo.saveAll(customers);
 	}
 	
-	List<CustomerDto> getCustomerByName(Long organizationID) throws InstantiationException, IllegalAccessException{
+	public List<CustomerDto> getCustomerByName(Long organizationID) throws InstantiationException, IllegalAccessException{
+		List<Customer> customers = customerRepo.findByOrganizationID(organizationID);
+		return SalestrackerBeanUtil.copyEntityListToDTOList(customers, CustomerDto.class);
+	}
+
+	public List<CustomerDto> getCustomersByOrgId(Long organizationID) throws InstantiationException, IllegalAccessException {
 		List<Customer> customers = customerRepo.findByOrganizationID(organizationID);
 		return SalestrackerBeanUtil.copyEntityListToDTOList(customers, CustomerDto.class);
 	}

@@ -18,6 +18,8 @@ public class OrganizationDto {
 
 	private Long organizationID;
 	
+	private String organizationName;
+	
 	private String organizationDetail;
 	
 	private String addressLine1;

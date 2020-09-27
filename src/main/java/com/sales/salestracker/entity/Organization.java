@@ -28,6 +28,9 @@ public class Organization {
 	@Column(name = "organization_id")
 	private Long organizationID;
 	
+	@Column(name = "organization_name")
+	private String organizationName;
+	
 	@Column(name = "organization_detail")
 	private String organizationDetail;
 	
