@@ -33,7 +33,7 @@ public class CustomerController {
 		return customerService.getCustomers();
 	}
 	
-	@GetMapping("/Customers//{organizationID}")
+	@GetMapping("/Customers/{organizationID}")
 	private List<CustomerDto> getCustomersByOrgId(@PathVariable("organizationID")Long organizationID) throws InstantiationException, IllegalAccessException{
 		return customerService.getCustomersByOrgId(organizationID);
 	}
