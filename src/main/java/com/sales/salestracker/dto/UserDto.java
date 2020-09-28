@@ -3,16 +3,18 @@
  */
 package com.sales.salestracker.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author cchaubey
  *
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserDto {
-
-	private Long userID;
 	
 	private String userName;
 	
@@ -22,15 +24,6 @@ public class UserDto {
 	
 	private String lastName;
 
-	
-
-	public Long getUserID() {
-		return userID;
-	}
-
-	public void setUserID(Long userID) {
-		this.userID = userID;
-	}
 
 	public String getUserName() {
 		return userName;

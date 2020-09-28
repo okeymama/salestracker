@@ -17,14 +17,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = {"userID"})
+@EqualsAndHashCode(of = {"userName"})
 public class User {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="user_id")
-	private Long userID;
-	
 	@Column(name="user_name")
 	private String userName;
 	
@@ -37,14 +33,6 @@ public class User {
 	@Column(name="last_name")
 	private String lastName;
 
-
-	public Long getUserID() {
-		return userID;
-	}
-
-	public void setUserID(Long userID) {
-		this.userID = userID;
-	}
 
 	public String getUserName() {
 		return userName;

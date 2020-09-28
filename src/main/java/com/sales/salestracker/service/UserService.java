@@ -22,7 +22,7 @@ public class UserService {
 		UserDto userDto = new UserDto();
 		Optional<User> user = userRepository.findByUserNameAndPassword(userName,password);
 		if(user.isPresent()) {
-			SalestrackerBeanUtil.copyProperties(user, userDto);
+			SalestrackerBeanUtil.copyProperties(user.get(),userDto);
 		}
 		return userDto;
 	}

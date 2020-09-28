@@ -27,7 +27,7 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@GetMapping("/login")
+	@PostMapping("/login")
 	public ResponseEntity<UserDto> validateUser(@RequestBody UserDto userDto) {
 		
 		UserDto user = userService.validateUser(userDto.getUserName(),userDto.getPassword());
@@ -45,7 +45,7 @@ public class UserController {
 	
 	
 	@PostMapping("/Users")
-	public void saveUsers(List<UserDto> userDtos) throws InstantiationException, IllegalAccessException {
+	public void saveUsers(@RequestBody List<UserDto> userDtos) throws InstantiationException, IllegalAccessException {
 		userService.saveUsers(userDtos);
 	}
 	
